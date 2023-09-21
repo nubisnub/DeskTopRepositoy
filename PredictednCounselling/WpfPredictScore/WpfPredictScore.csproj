@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ML" Version="1.7.1" />
+    <PackageReference Include="Microsoft.ML.FastTree" Version="1.7.1" />
+  </ItemGroup>
+  <ItemGroup Label="MLModelScorePredict">
+    <None Include="MLModelScorePredict.consumption.cs">
+      <DependentUpon>MLModelScorePredict.mbconfig</DependentUpon>
+    </None>
+    <None Include="MLModelScorePredict.training.cs">
+      <DependentUpon>MLModelScorePredict.mbconfig</DependentUpon>
+    </None>
+    <None Include="MLModelScorePredict.zip">
+      <DependentUpon>MLModelScorePredict.mbconfig</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ChatClient\CounsellingChatClient.csproj" />
+  </ItemGroup>
+</Project>

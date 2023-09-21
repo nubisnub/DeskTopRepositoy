@@ -1,0 +1,25 @@
+﻿<Window x:Class="CounsellingChatServer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CounsellingChatServer"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Height="50" Background="LightBlue" HorizontalContentAlignment="Stretch" VerticalAlignment="Top" Content="Server Window" FontSize="30"/>
+        <ListBox x:Name="ConnectedClientListBox" Grid.Row="2" Grid.Column="0" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+        <ListBox x:Name="MessagesListBox" Grid.Row="2" Grid.Column="3" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+        <Button x:Name="StartBtn" Content="서버 시작" FontSize="20" Grid.Row="1" Grid.Column="0"/>
+        <Button x:Name="StopBtn" Content="서버 종료" FontSize="20" Grid.Row="1" Grid.Column="1"/>
+    </Grid>
+</Window>
