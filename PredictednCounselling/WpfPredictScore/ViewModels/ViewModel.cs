@@ -29,7 +29,7 @@ namespace WpfPredictScore.ViewModels
         public ViewModel(IQuizAnswer_Repository iquizanswer_repository)
         {
             this.qrr = iquizanswer_repository;
-            counsellingCommand = new RelayCommand<object>(CounsellingExe, IsValidExecute);
+            CounsellingCommand = new RelayCommand<object>(CounsellingExe, IsValidExecute);
             SaveCommand = new RelayCommand<object>(SaveAnswer, IsValid);
             PredictCommand = new RelayCommand<object>(PredictScore, IsValidExecute);
 
@@ -244,7 +244,7 @@ namespace WpfPredictScore.ViewModels
         }
 
 
-        public ICommand counsellingCommand { get; set; }
+        public ICommand CounsellingCommand { get; set; }
         public ICommand SaveCommand { get; set; }
         public ICommand? PredictCommand { get; set; }
 
