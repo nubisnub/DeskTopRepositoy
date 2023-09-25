@@ -15,13 +15,14 @@ namespace WpfApp20230825.Models
         public Accounts AccountInfo { get; set; } = default!;
 
 
+        //insert 와 update delete는 admin만 가능하게
         public bool InsertOrUpdate(StudentDB studentDB)
         {
             try
             {
                 using (Mssql? db = Getdb())
                 {
-                    var existingStudent = GetOne().FirstOrDefault(s => s.Day_Of_The_Class.Equals(studentDB.Day_Of_The_Class));
+                    var existingStudent = GetAll().FirstOrDefault(s => s.Day_Of_The_Class.Equals(studentDB.Day_Of_The_Class));
 
                     if (existingStudent != null)
                     {
@@ -76,6 +77,7 @@ namespace WpfApp20230825.Models
         //회원 학생 조회용
         public ObservableCollection<StudentDB> GetOne()
         {
+            MessageBox.Show(AccountInfo.StudentName);
             ObservableCollection<StudentDB> a_student_Review_State = new ObservableCollection<StudentDB>();
             using Mssql? mssql = Getdb();
 
