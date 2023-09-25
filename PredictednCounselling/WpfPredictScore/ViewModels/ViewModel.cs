@@ -8,6 +8,7 @@ namespace WpfPredictScore.ViewModels
 {
     public class ViewModel : ViewModelINotifyPropertyChanged
     {
+        
         private readonly IQuizAnswer_Repository qrr;
 
         private ObservableCollection<QuizAnswer>? _answers;
